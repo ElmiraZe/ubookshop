@@ -19,4 +19,7 @@ You can start editing the page by modifying `components/Pages/index.tsx`. The pa
 <br/>
 <img src="https://github.com/ElmiraZe/ubookshop/blob/master/ubookshop.png?raw=true" />
 
+<img src="https://github.com/ElmiraZe/ubookshop/blob/master/ubookshop2.png?raw=true" />
+
+<img src="https://github.com/ElmiraZe/ubookshop/blob/master/ubookshop3.png?raw=true" />
 
