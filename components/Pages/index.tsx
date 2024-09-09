@@ -154,8 +154,8 @@ const Page: PageEl = (props, state, refresh, getProps) => {
 
 
             <img src={state.faves.includes(state.book.title) ?
-              "https://cdn.turing.team/research/7/broken%20heart.png" :
-              "https://cdn.turing.team/research/7/redheart.png"}
+              "https://cdn.ituring.ir/research/7/broken%20heart.png" :
+              "https://cdn.ituring.ir/research/7/redheart.png"}
 
               style={{
                 height: 20, width: 20, objectFit: "contain",
@@ -171,15 +171,15 @@ const Page: PageEl = (props, state, refresh, getProps) => {
 
       <Window title={"Shopping Cart"} style={{
         minHeight: 200, margin: 10, width: "calc(100% - 20px)",
-        backgroundImage: 'url("https://cdn.turing.team/research/7/wallpaper.webp")',
+        backgroundImage: 'url("https://cdn.ituring.ir/research/7/wallpaper.webp")',
         backgroundSize: 'cover'
       }}>
 
         <w-cse style={{ height: 120, width: "100%" }}>
 
-          <img style={{ height: 90, width: 90 }} src="https://cdn.turing.team/research/7/money.png" />
+          <img style={{ height: 90, width: 90 }} src="https://cdn.ituring.ir/research/7/money.png" />
 
-          <img style={{ height: 70, width: 70 }} src="https://cdn.turing.team/research/7/book2.png" />
+          <img style={{ height: 70, width: 70 }} src="https://cdn.ituring.ir/research/7/book2.png" />
 
 
 
@@ -244,7 +244,7 @@ export async function getServerSideProps(context) {
 
   for (let book of books) {
 
-    book.imageLink = "https://cdn.turing.team/research/ex/books/" + book.imageLink
+    book.imageLink = "https://cdn.ituring.ir/research/ex/books/" + book.imageLink
 
   }
 

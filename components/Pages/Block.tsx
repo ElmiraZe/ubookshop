@@ -33,7 +33,7 @@ export const Block = props => {
             }} />
 
 
-        {props.state.faves.includes(props.book.title) ? <img src="https://cdn.turing.team/research/7/redheart.png"
+        {props.state.faves.includes(props.book.title) ? <img src="https://cdn.ituring.ir/research/7/redheart.png"
             style={{
                 height: 14, width: 20, objectFit: "contain",
                 position: "absolute", top: 10, right: 10
@@ -54,8 +54,8 @@ export const Block = props => {
             <f-12>
                 <sp-2>
                     <img src={props.state.cart.includes(props.book.title) ?
-                        "https://cdn.turing.team/qepal/ok.svg" :
-                        "https://cdn.turing.team/research/7/basket.webp"}
+                        "https://cdn.ituring.ir/qepal/ok.svg" :
+                        "https://cdn.ituring.ir/research/7/basket.webp"}
                         style={{ height: size, width: size, objectFit: "contain", margin: "0 10px" }} />
                 </sp-2>
             </f-12>
