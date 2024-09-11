@@ -4,7 +4,15 @@ import type { NextApiRequest, NextApiResponse } from "next"
 
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+
+
   let body = JSON.parse(req.body)
-  console.log(body)
-  res.send({code:0})
+  
+  await db.collection("cart").deleteMany({})
+
+  await db.collection("cart").insertMany(body.map(b =>{
+    return {title:b}
+  }))
+
+  res.send({code:0, cdn: process.env.CDN, pong:true})
 }

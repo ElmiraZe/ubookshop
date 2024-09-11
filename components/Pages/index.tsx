@@ -28,13 +28,14 @@ const Page: PageEl = (props, state, refresh, getProps) => {
 
 
   let styles = global.styles
+  console.log(props.cart)
 
 
 
-
-  if (!state.cart) {
-    state.cart = []
-  }
+if (!state.cart) {
+      state.cart = props.cart.map(o => o.title)
+    
+   }
   let total_price = 0
 
   for (let title of state.cart) {
@@ -111,19 +112,22 @@ const Page: PageEl = (props, state, refresh, getProps) => {
             height: 30, width: "80%", backgroundColor:
               state.cart.includes(state.book.title) ? "peachpuff" : "#D2F6C3"
           }}
-            onClick={() => {
+            onClick={ async () => {
+
+              
 
               if (state.cart.includes(state.book.title)) {
                 state.cart = state.cart.filter(bookname => state.book.title != bookname)
                 state.form = null
                 refresh()
-                // await api("/api/test",state.cart)
+              
               }
               else {
                 state.cart.push(state.book.title)
                 state.form = null
                 refresh()
               }
+              await api("/api/cart", state.cart)
 
             }}>
 
@@ -241,6 +245,8 @@ export async function getServerSideProps(context) {
     role, path, devmod, userip, } = session;
 
   let books = await global.db.collection("books").find({}).toArray()
+  let cart = await global.db.collection("cart").find({}).toArray()
+  
 
   for (let book of books) {
 
@@ -248,12 +254,15 @@ export async function getServerSideProps(context) {
 
   }
 
+  console.log(cart)
+
 
   return {
     props: {
       data: global.QSON.stringify({
         session,
         books,
+        cart,
         // nlangs,
       })
     },
